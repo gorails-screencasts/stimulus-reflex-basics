@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_182019) do
+ActiveRecord::Schema.define(version: 2020_04_06_182636) do
 
   create_table "announcements", force: :cascade do |t|
     t.datetime "published_at"
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 2020_04_06_182019) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_services_on_user_id"
+  end
+
+  create_table "todos", force: :cascade do |t|
+    t.string "description"
+    t.datetime "completed_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
